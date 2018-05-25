@@ -1,5 +1,11 @@
 # Crud-Nodejs
 
+## Extra (Saltarse este paso)
+Al crear un nuevo proyecto de Nodejs se tiene que usar
+```
+npm init --yes
+```
+
 ## Instalar paquetes del proyecto
 ```
 npm install
