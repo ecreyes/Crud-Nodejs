@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=titulo%></title>
+</head>
+<body>
+	<%if(isAuthenticated){%>
+		<h1>Bienvenido al panel <%=user.nombre%></h1>
+	<%}%>
+	<nav>
+		<ul>
+			<li><a href="/cliente/">Clientes</a></li>
+			<li><a href="/user/logout/">Cerrar sesión</a></li>
+		</ul>
+	</nav>	
+</body>
+</html>

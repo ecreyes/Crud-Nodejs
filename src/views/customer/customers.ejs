@@ -5,7 +5,12 @@
 	<title>Inicio</title>
 </head>
 <body>
-	<form action="/add/" method="post">
+	<nav>
+		<ul>
+			<li><a href="/user/panel/">Regresar al panel</a></li>
+		</ul>
+	</nav>
+	<form action="/cliente/add/" method="post">
 		<input type="text" name="nombre" placeholder="Nombre">
 		<input type="text" name="direccion" placeholder="Direccion">
 		<input type="text" name="telefono" placeholder="Telefono">
@@ -30,8 +35,8 @@
 						<td><%=data[i].direccion%></td>
 						<td><%=data[i].telefono%></td>
 						<td>
-							<a href="/delete/<%=data[i].id%>">Eliminar</a>
-							<a href="/update/<%=data[i].id%>">Editar</a>
+							<a href="/cliente/delete/<%=data[i].id%>">Eliminar</a>
+							<a href="/cliente/update/<%=data[i].id%>">Editar</a>
 						</td>
 					</tr>
 				<%}%>

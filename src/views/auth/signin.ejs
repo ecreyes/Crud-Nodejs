@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=titulo%></title>
+</head>
+<body>
+	<h1>Iniciar Sesión</h1>
+	<%if(mensaje.length>0){%>
+		<p><%=mensaje%></p>
+	<%}%>
+	<%if(authmensaje.length>0){%>
+		<p><%=authmensaje%></p>
+	<%}%>
+	<form action="/user/signin/" method="post">
+		<!--Ojo el name debe ser username para que passport lo reconozca. -->
+		<input type="text" placeholder="correo" name="username">
+		<input type="password" placeholder="contraseña" name="password">
+		<button type="submit">Entrar</button>
+	</form>
+</body>
+</html>

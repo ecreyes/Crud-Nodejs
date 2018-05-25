@@ -9,7 +9,7 @@ controller.list = (req,res)=>{
 				next(err);
 			}else{
 				// me va a enviar a la vista customers.ejs
-				res.render('customers',{
+				res.render('customer/customers',{
 					data: rows
 				});
 			}
@@ -20,7 +20,7 @@ controller.list = (req,res)=>{
 controller.save = (req,res)=>{
 	req.getConnection((err,conn)=>{
 		conn.query('INSERT INTO customer set ?',[req.body],(err,rows)=>{
-			res.redirect('/')
+			res.redirect('/cliente/')
 		});
 	});
 };
@@ -28,7 +28,7 @@ controller.save = (req,res)=>{
 controller.edit = (req,res)=>{
 	req.getConnection((err,conn)=>{
 		conn.query('SELECT * FROM customer WHERE id=?',[req.params.id],(err,rows)=>{
-			res.render('customers_edit',{
+			res.render('customer/customers_edit',{
 				data: rows[0]
 			});
 		});
@@ -38,7 +38,7 @@ controller.edit = (req,res)=>{
 controller.update = (req,res)=>{
 	req.getConnection((err,conn)=>{
 		conn.query('UPDATE customer set ? WHERE id=?',[req.body,req.params.id],(err,rows)=>{
-			res.redirect('/')
+			res.redirect('/cliente/')
 		})
 	})
 };
@@ -46,7 +46,7 @@ controller.update = (req,res)=>{
 controller.delete = (req,res)=>{
 	req.getConnection((err,conn)=>{
 		conn.query('DELETE FROM customer WHERE id=?',[req.params.id],(err,rows)=>{
-			res.redirect('/')
+			res.redirect('/cliente/')
 		});
 	})
 };
