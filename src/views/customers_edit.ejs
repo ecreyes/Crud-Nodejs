@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Editar</title>
+</head>
+<body>
+	<form action="/update/<%=data.id%>" method="post">
+		<input type="text" name="nombre"  value="<%=data.nombre%>">
+		<input type="text" name="direccion"  value="<%=data.direccion%>">
+		<input type="text" name="telefono"  value="<%=data.telefono%>">
+		<button type="submit">Actualizar</button>
+	</form>
+</body>
+</html>

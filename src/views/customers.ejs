@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio</title>
+</head>
+<body>
+	<form action="/add/" method="post">
+		<input type="text" name="nombre" placeholder="Nombre">
+		<input type="text" name="direccion" placeholder="Direccion">
+		<input type="text" name="telefono" placeholder="Telefono">
+		<button type="submit">Guardar</button>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<td># Número</td>
+				<td>Nombre</td>
+				<td>Dirección</td>
+				<td>Telefono</td>
+				<td>Acciones</td>				
+			</tr>			
+		</thead>
+		<tbody>
+			<% if(data){%>
+				<%for(var i=0;i<data.length;i++){%>
+					<tr>
+						<td><%=(i+1)%></td>
+						<td><%=data[i].nombre%></td>
+						<td><%=data[i].direccion%></td>
+						<td><%=data[i].telefono%></td>
+						<td>
+							<a href="/delete/<%=data[i].id%>">Eliminar</a>
+							<a href="/update/<%=data[i].id%>">Editar</a>
+						</td>
+					</tr>
+				<%}%>
+			<%}%>			
+		</tbody>
+	</table>
+</body>
+</html>

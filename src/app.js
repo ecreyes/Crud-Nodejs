@@ -16,6 +16,7 @@ app.set('views',path.join(__dirname,'views'));
 
 // middlewares
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended:false})); //reemplaza a body-parser,false porq no envia imagenes solo campos de form.
 app.use(myConnection(mysql,{
 	host: 'localhost',
 	user: 'root',
